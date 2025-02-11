@@ -1,9 +1,3 @@
-Initial config:
-
-List all dir
-ls -ld ~/
-
-
 sudo nix-channel --update
 sudo nixos-rebuild switch
 sudo nix-collect-garbage -d
