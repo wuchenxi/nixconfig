@@ -1,0 +1,16 @@
+Initial config:
+
+List all dir
+ls -ld ~/
+
+
+sudo nix-channel --update
+sudo nixos-rebuild switch
+sudo nix-collect-garbage -d
+nix-collect-garbage -d
+sudo nix-store --optimise
+
+nix-tree to see installed packages
+
+disable baloo by disable file indexing and kill the processes
+kde partition manager open from sudo partitionmanager
