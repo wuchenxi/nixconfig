@@ -1,3 +1,14 @@
+Initial config:
+
+List all dir
+ls -ld ~/
+
+
+new cli:
+
+nix flake update
+sudo nixos-rebuild switch --flake /etc/nixos
+
 sudo nix-channel --update
 sudo nixos-rebuild switch
 sudo nix-collect-garbage -d
