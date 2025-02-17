@@ -6,8 +6,18 @@ ls -ld ~/
 
 new cli:
 
-nix flake update
-sudo nixos-rebuild switch --flake /etc/nixos
+cd /etc/nixos
+sudo nix flake update
+sudo nixos-rebuild switch --flake ./
+
+or:
+sudo nixos-rebuild switch --recreate-lock-file --flake ./
+
+sudo nix-collect-garbage -d
+nix-collect-garbage -d
+sudo nix-store --optimise
+
+old cli:
 
 sudo nix-channel --update
 sudo nixos-rebuild switch
