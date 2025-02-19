@@ -17,13 +17,13 @@
   services.fstrim.enable = true;
 
   # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-  };
+  #boot.loader.grub = {
+  #    enable = true;
+  #    device = "nodev";
+  #    efiSupport = true;
+  #};
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -176,12 +176,16 @@
   # v2raya
   services.v2raya.enable = true;
 
+  # nix-ld for unpatched binary
+  programs.nix-ld.enable = true;
+
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "chenxi";
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.firefox.package = pkgs.firefox-bin;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -231,6 +235,6 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
