@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+
   # Microcode
   hardware.cpu.intel.updateMicrocode = true;
 
@@ -89,6 +91,14 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.cups-pdf.enable = true;
+  services.printing.cups-pdf.instances = {
+    pdf = {
+      settings = {
+        Out = "\${HOME}/cups-pdf";
+      };
+    };
+  };
   services.avahi = {
     enable = true;
     nssmdns4 = true;
