@@ -165,8 +165,8 @@
     packages = with pkgs; [
       kdePackages.kate
       texliveFull
-      python314
-      gcc14
+      python3
+      gcc
       vlc
       libreoffice-qt6-fresh
       calibre
@@ -178,7 +178,9 @@
       sage
       system-config-printer
       julia
+      gnumake
       nix-tree
+      _7zz-rar
     #  thunderbird
     ];
   };
@@ -188,6 +190,13 @@
 
   # nix-ld for unpatched binary
   programs.nix-ld.enable = true;
+  #programs.nix-ld.libraries = with pkgs; [
+  #    stdenv
+  #    stdenv.cc.cc
+  #    stdenv.cc.cc.lib
+  #    zlib
+  #    sqlite
+  #];
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -208,6 +217,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      git
+     zlib
      smartmontools
   ];
 
