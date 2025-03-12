@@ -57,7 +57,7 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -71,10 +71,10 @@
   programs.partition-manager.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  #services.xserver.xkb = {
+  #  layout = "us";
+  #  variant = "";
+  #};
 
   # fcitx5
   i18n.inputMethod = {
@@ -177,10 +177,11 @@
       nil
       sage
       system-config-printer
-      julia
-      gnumake
+      #julia
+      #gnumake
       nix-tree
       _7zz-rar
+      debootstrap
     #  thunderbird
     ];
   };
@@ -195,8 +196,25 @@
   #    stdenv.cc.cc
   #    stdenv.cc.cc.lib
   #    zlib
-  #    sqlite
+      #sqlite
+  #    fuse
+  #    icu
+  #    openssl
+  #    krb5
+  #    lttng-ust_2_12
+  #    fontconfig
+  #    dotnetCorePackages.runtime_9_0
+  #    xorg.libX11
+  #    xorg.libICE
+  #    xorg.libXcursor
+  #    xorg.libSM
+  #    xorg.libXi
+  #    xorg.libXext
+  #    xorg.libXrandr
   #];
+
+  # Enable Flatpak
+  services.flatpak.enable = true;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -204,7 +222,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.firefox.package = pkgs.firefox-bin;
+  #programs.firefox.package = pkgs.firefox-bin;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -217,6 +235,8 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      git
+    # appimage-run
+    # fontconfig
      zlib
      smartmontools
   ];
@@ -255,6 +275,6 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # Enable Flakes
-  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 }
