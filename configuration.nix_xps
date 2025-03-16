@@ -213,7 +213,7 @@
       ffmpeg-full
       imagemagickBig
       nil
-      sage
+      #sage
       system-config-printer
       julia
       nix-tree
