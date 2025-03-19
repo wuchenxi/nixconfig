@@ -1,1 +1,4 @@
+alias os-update='sudo nixos-rebuild switch --upgrade --no-flake -I nixos-config=/etc/nixos/configuration.nix'
+alias os-clean='sudo nix-collect-garbage -d && nix-collect-garbage -d'
+alias miniforge-enable='source /home/chenxi/miniforge3/bin/activate'
 
