@@ -115,6 +115,7 @@
   ## Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "chenxi";
+  security.pam.services.sddm.enableKwallet = true;
 
 
   ######################
@@ -190,7 +191,7 @@
     packages = with pkgs; [
       kdePackages.kate
       texliveFull
-      python3
+      #python3
       gcc
       vlc
       libreoffice-qt6-fresh
@@ -200,13 +201,13 @@
       ffmpeg-full
       imagemagickBig
       nil
-      sage
+      #sage
       system-config-printer
       #julia
       #gnumake
       nix-tree
       _7zz-rar
-      debootstrap # for chroot debian/ubuntu
+      #debootstrap # for chroot debian/ubuntu
     #  thunderbird
     ];
   };
